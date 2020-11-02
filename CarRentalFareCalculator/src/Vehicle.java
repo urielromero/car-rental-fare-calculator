@@ -6,7 +6,7 @@ public class Vehicle {
      int vin;
      int basePrice;
      String color = "Black";
-     String mfgName;
+     protected String mfgName = "";
 
      //default constructor
      public Vehicle(){};
@@ -78,7 +78,7 @@ public class Vehicle {
         return mfgName;
     }
 
-    public void setMfgName(String mfgName) {
-        this.mfgName = mfgName;
-    }
+//    public void setMfgName(String mfgName) {
+//        this.mfgName = mfgName;
+//    }
 }
