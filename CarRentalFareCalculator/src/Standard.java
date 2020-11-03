@@ -32,6 +32,14 @@ public class Standard extends Vehicle {
         System.out.println("Number of Seats: " + seatsNumber);
     }
 
+    @Override
+    public void setRange(int range){
+
+        while(range < 0){
+            System.out.println("Please enter a range > 0");
+        }
+        this.range = range;
+    }
 
     public int getEmissionDate() {
         return emissionDate;

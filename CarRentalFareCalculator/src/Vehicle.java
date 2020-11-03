@@ -6,12 +6,12 @@ public class Vehicle {
      int vin;
      int basePrice;
      String color = "Black";
-     protected String mfgName = "";
+     String mfgName;
 
      //default constructor
      public Vehicle(){};
 
-     // constructor for no Default Color
+     // constructor for no DEFAULT COLOR
     public Vehicle(int range, int vin, int basePrice, String mfgName){
         this.range = range;
         this.vin = vin;
@@ -19,13 +19,11 @@ public class Vehicle {
         this.mfgName = mfgName;
     }
 
-    public Vehicle(int range, int vin, int basePrice, String mfgName, String color){
-        this();
-        this.range = range;
-        this.vin = vin;
-        this.basePrice = basePrice;
+    // constructor for added color
+    public Vehicle(int range, int vin, int basePrice, String color, String mfgName){
+        this( range, vin, basePrice, mfgName);
         this.color = color;
-        this.mfgName = mfgName;
+
     }
 
 
