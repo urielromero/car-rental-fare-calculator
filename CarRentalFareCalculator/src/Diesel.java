@@ -30,4 +30,21 @@ public class Diesel extends Vehicle {
         System.out.println("Number of Wheels: " + wheelsNumber);
         System.out.println("Number of Cylinders: " + cylinderNumber);
     }
+
+
+    public int getWheelsNumber() {
+        return wheelsNumber;
+    }
+
+    public void setWheelsNumber(int wheelsNumber) {
+        this.wheelsNumber = wheelsNumber;
+    }
+
+    public int getCylinderNumber() {
+        return cylinderNumber;
+    }
+
+    public void setCylinderNumber(int cylinderNumber) {
+        this.cylinderNumber = cylinderNumber;
+    }
 }

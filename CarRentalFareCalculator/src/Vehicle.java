@@ -11,34 +11,31 @@ public class Vehicle {
      //default constructor
      public Vehicle(){};
 
-     //constructor
-     public Vehicle(int range, int vin, int basePrice, String color, String mfgName){
-
-         this.range = range;
-         this.vin = vin;
-         this.basePrice = basePrice;
-         this.color = color;
-         this.mfgName = mfgName;
-     }
-
      // constructor for no Default Color
     public Vehicle(int range, int vin, int basePrice, String mfgName){
-
         this.range = range;
         this.vin = vin;
         this.basePrice = basePrice;
         this.mfgName = mfgName;
     }
 
+    public Vehicle(int range, int vin, int basePrice, String mfgName, String color){
+        this();
+        this.range = range;
+        this.vin = vin;
+        this.basePrice = basePrice;
+        this.color = color;
+        this.mfgName = mfgName;
+    }
+
+
 
     public void displayInfo(){
-
         System.out.println("\nManufacture Name: " + mfgName);
         System.out.println("Range: " + range);
         System.out.println("VIN: " + vin);
         System.out.println("Base Price: $" + basePrice);
         System.out.println("Color: " + color);
-
     }
 
 

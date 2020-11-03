@@ -10,8 +10,11 @@ public class VehicleRentalsTest {
         Diesel truck = new Diesel(200, 23454673, 6500, "red", "Volvo",20,16);
         Electric model3 = new Electric(200, 4566567, 45000, "Tesla", 4, true);
 
-        versa.displayInfo();
-        truck.displayInfo();
-        model3.displayInfo();
+//        versa.displayInfo();
+//        truck.displayInfo();
+//        model3.displayInfo();
+
+
+
     }
 }
