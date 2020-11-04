@@ -2,6 +2,9 @@ public class Standard extends Vehicle {
 
     int emissionDate;
     int seatsNumber;
+    int vehicleCode = 12;
+    int luxuryTax = 0;
+
 
 
     //Default Constructor
@@ -23,13 +26,22 @@ public class Standard extends Vehicle {
 
     @Override
     public void displayInfo(){
-        System.out.println("\nManufacture Name: " + mfgName);
-        System.out.println("Range: " + range);
-        System.out.println("VIN: " + vin);
-        System.out.println("Base Price: $" + basePrice);
-        System.out.println("Color: " + color);
-        System.out.println("Emissions Test Date: " + emissionDate);
-        System.out.println("Number of Seats: " + seatsNumber);
+
+        System.out.println("\nStandard vehicle by " +
+                this.getMfgName() + " with VIN " + this.getVin() +
+                " is available to rent in " + this.getColor() +
+                ". This beast has a range of " + this.getRange() +
+                " and only costs $" + this.getCost());
+
+        //“carType by manufacturer with VIN vin is available to rent in color. This beast has a range of range and only costs $cost”
+
+//        System.out.println("\nManufacture Name: " + mfgName);
+//        System.out.println("Range: " + range);
+//        System.out.println("VIN: " + vin);
+//        System.out.println("Base Price: $" + basePrice);
+//        System.out.println("Color: " + color);
+//        System.out.println("Emissions Test Date: " + emissionDate);
+//        System.out.println("Number of Seats: " + seatsNumber);
     }
 
     @Override
@@ -38,8 +50,9 @@ public class Standard extends Vehicle {
         while(range < 0){
             System.out.println("Please enter a range > 0");
         }
-        this.range = range;
+        super.setRange(range);
     }
+    
 
     public int getEmissionDate() {
         return emissionDate;
@@ -55,5 +68,9 @@ public class Standard extends Vehicle {
 
     public void setSeatsNumber(int seatsNumber) {
         this.seatsNumber = seatsNumber;
+    }
+
+    public int getVehicleCode(){
+        return vehicleCode;
     }
 }

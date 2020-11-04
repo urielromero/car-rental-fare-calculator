@@ -3,6 +3,8 @@ public class Electric extends Vehicle {
     int batteriesOnBoard;
     boolean isTesla;
     boolean limitableRule;
+    int vehicleCode = 76;
+    int luxuryTax = 153;
 
     //signifies eligibility for tax benefits
     boolean renewableRule = true;
@@ -27,14 +29,11 @@ public class Electric extends Vehicle {
 
     @Override
     public void displayInfo(){
-        System.out.println("\nManufacture Name: " + mfgName);
-        System.out.println("Range: " + range);
-        System.out.println("VIN: " + vin);
-        System.out.println("Base Price: $" + basePrice);
-        System.out.println("Color: " + color);
-        System.out.println("Batteries: " + batteriesOnBoard);
-        System.out.println("Is it a Tesla? " + isTesla);
-
+        System.out.println("\nElectric vehicle by " +
+                this.getMfgName() + " with VIN " + this.getVin() +
+                " is available to rent in " + this.getColor() +
+                ". This monster has a range of " + this.getRange() +
+                " and only costs $" + this.getCost() + " unless range exceeded");
     }
 
     @Override
@@ -44,7 +43,7 @@ public class Electric extends Vehicle {
             //out of range exception should occur
             System.out.println("Please enter a valid range from 50 to 499");
         }
-        this.range = range;
+        super.setRange(range);
     }
 
 

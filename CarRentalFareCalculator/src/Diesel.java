@@ -4,6 +4,8 @@ public class Diesel extends Vehicle {
     int cylinderNumber;
     boolean limitableRule;
     boolean semiTruck;
+    int vehicleCode = 50;
+    int luxuryTax;
 
     //Default constructor
     public Diesel (){};
@@ -15,7 +17,9 @@ public class Diesel extends Vehicle {
         this.cylinderNumber = cylinderNumber;
         this.semiTruck = semiTruck;
         limitableRule = semiTruck; // apply limitabble rule if we have a semi-truck
-
+        if (semiTruck){
+            vehicleCode = 500;
+        }
 
     }
     //Default color constructor
@@ -25,18 +29,34 @@ public class Diesel extends Vehicle {
         this.cylinderNumber = cylinderNumber;
         this.semiTruck = semiTruck;
         limitableRule = semiTruck; // apply limitabble rule if we have a semi-truck
+        if (semiTruck){
+            vehicleCode = 500;
+        }
     }
 
 
     @Override
     public void displayInfo(){
-        System.out.println("\nManufacture Name: " + mfgName);
-        System.out.println("Range: " + range);
-        System.out.println("VIN: " + vin);
-        System.out.println("Base Price: $" + basePrice);
-        System.out.println("Color: " + color);
-        System.out.println("Number of Wheels: " + wheelsNumber);
-        System.out.println("Number of Cylinders: " + cylinderNumber);
+       // System.out.println("\nManufacture Name: " + mfgName);
+//        System.out.println("Range: " + range);
+//        System.out.println("VIN: " + vin);
+//        System.out.println("Base Price: $" + basePrice);
+//        System.out.println("Color: " + color);
+//        System.out.println("Number of Wheels: " + wheelsNumber);
+//        System.out.println("Number of Cylinders: " + cylinderNumber);
+        if (semiTruck){
+            System.out.println("\nDiesel Semi-truck by " +
+                    this.getMfgName() + " with VIN " + this.getVin() +
+                    " is available to rent in " + this.getColor() +
+                    ". This monster has a range of " + this.getRange() +
+                    " and only costs $" + this.getCost()+ " unless range exceeded");
+        }else {
+            System.out.println("\nDiesel vehicle by " +
+                    this.getMfgName() + " with VIN " + this.getVin() +
+                    " is available to rent in " + this.getColor() +
+                    ". This beast has a range of " + this.getRange() +
+                    " and only costs $" + this.getCost());
+        }
     }
 
     public void setRange(int range){
@@ -48,7 +68,7 @@ public class Diesel extends Vehicle {
                 //out of range exception should occur
                 System.out.println("Please enter a range > 0");
             }
-            this.range = range;
+            super.setRange(range);
     // if there is a limitation, then range must be from 50 to 499
         }else
             if (limitableRule){
@@ -56,7 +76,7 @@ public class Diesel extends Vehicle {
                 //out of range exception should occur
                 System.out.println("Please enter a valid range from 50 to 499");
             }
-            this.range = range;
+            super.setRange(range);
         }
     }
 
