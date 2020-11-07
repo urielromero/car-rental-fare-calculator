@@ -5,6 +5,7 @@ public class Electric extends Vehicle {
     boolean limitableRule;
     int vehicleCode = 76;
     int luxuryTax = 153;
+    String mfgName;
 
     //signifies eligibility for tax benefits
     boolean renewableRule = true;
@@ -26,6 +27,12 @@ public class Electric extends Vehicle {
         this.isTesla= isTesla;
     };
 
+    //added for user input options
+    public Electric(int range, String color, boolean isTesla){
+        super(range, color);
+        this.isTesla = isTesla;
+    };
+
 
     @Override
     public void displayInfo(){
@@ -44,6 +51,14 @@ public class Electric extends Vehicle {
             System.out.println("Please enter a valid range from 50 to 499");
         }
         super.setRange(range);
+    }
+
+    @Override
+    public String getMfgName() {
+        if(isTesla){
+            return "Tesla";
+        }
+        return mfgName;
     }
 
 

@@ -34,6 +34,14 @@ public class Diesel extends Vehicle {
         }
     }
 
+    public Diesel (int range, String color, boolean semiTruck) {
+        super(range, color);
+        this.wheelsNumber = wheelsNumber;
+        this.cylinderNumber = cylinderNumber;
+        this.semiTruck = semiTruck;
+    }
+
+
 
     @Override
     public void displayInfo(){

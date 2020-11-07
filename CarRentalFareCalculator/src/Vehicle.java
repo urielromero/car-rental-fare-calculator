@@ -33,6 +33,11 @@ public class Vehicle {
         this.color = color;
      }
 
+    public Vehicle(int range, String color){
+        this.range = range;
+        this.color = color;
+    }
+
      public void displayInfo(){
 
      }

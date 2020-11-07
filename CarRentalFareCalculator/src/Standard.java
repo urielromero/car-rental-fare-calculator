@@ -24,6 +24,11 @@ public class Standard extends Vehicle {
         this.seatsNumber = seatsNumber;
     };
 
+    public Standard(int range, String color){
+        super(range, color);
+    };
+
+
     @Override
     public void displayInfo(){
 
