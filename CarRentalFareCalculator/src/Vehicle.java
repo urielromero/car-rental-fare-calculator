@@ -1,9 +1,11 @@
+import java.util.Random;
+
 public class Vehicle {
 
     //characteristics of each vehicle
      private int range;
      //using all numbers on vin for simplicity. A method can be implemented to turn char/string to numbers
-     private int vin;
+     private double vin;
      private int basePrice;
      private String color = "Black";
      private String mfgName;
@@ -36,16 +38,18 @@ public class Vehicle {
     public Vehicle(int range, String color){
         this.range = range;
         this.color = color;
+
+        this.setVin();
+        this.vin = this.getVin();
     }
 
      public void displayInfo(){
-
      }
 
     public double getCost( ){
          //𝑐𝑜𝑠𝑡 = [(𝑏𝑎𝑠𝑒𝑃𝑟𝑖𝑐𝑒 ∗ (𝑣𝑖𝑛/𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝐶𝑜𝑑𝑒)) ÷ 𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝑅𝑎𝑛𝑔𝑒] + 𝑙𝑢𝑥𝑢𝑟𝑦𝑇𝑎𝑥
-        //cost = ((this.getBasePrice() * (this.getVin()/this.getVehicleCode())) / this.getRange()) + luxuryTax;
-        cost = this.getVehicleCode();
+        cost = ((this.getBasePrice() * (this.getVin()/this.getVehicleCode())) / this.getRange()) + luxuryTax;
+
     return cost;
     }
 
@@ -57,12 +61,13 @@ public class Vehicle {
         this.range = range;
     }
 
-    public int getVin() {
-        return vin;
-    }
+    public int getVin() { return (int) vin; }
 
-    public void setVin(int vin) {
-        this.vin = vin;
+    public void setVin(){
+         //number of digits
+         int n = 10;
+         int m = (int) Math.pow(10, n-1);
+         this.vin = m + new Random().nextInt(9*m);
     }
 
     public int getBasePrice() {
@@ -87,5 +92,5 @@ public class Vehicle {
 
     public int getVehicleCode() {
         return VehicleCode;
-}
+    }
 }

@@ -4,6 +4,7 @@ public class Standard extends Vehicle {
     int seatsNumber;
     int vehicleCode = 12;
     int luxuryTax = 0;
+    int basePrice = 3000;
 
 
 
@@ -26,27 +27,17 @@ public class Standard extends Vehicle {
 
     public Standard(int range, String color){
         super(range, color);
+        this.basePrice=3000;
     };
-
 
     @Override
     public void displayInfo(){
-
+        //“carType by manufacturer with VIN vin is available to rent in color. This beast has a range of range and only costs $cost”
         System.out.println("\nStandard vehicle by " +
                 this.getMfgName() + " with VIN " + this.getVin() +
                 " is available to rent in " + this.getColor() +
                 ". This beast has a range of " + this.getRange() +
                 " and only costs $" + this.getCost());
-
-        //“carType by manufacturer with VIN vin is available to rent in color. This beast has a range of range and only costs $cost”
-
-//        System.out.println("\nManufacture Name: " + mfgName);
-//        System.out.println("Range: " + range);
-//        System.out.println("VIN: " + vin);
-//        System.out.println("Base Price: $" + basePrice);
-//        System.out.println("Color: " + color);
-//        System.out.println("Emissions Test Date: " + emissionDate);
-//        System.out.println("Number of Seats: " + seatsNumber);
     }
 
     @Override
