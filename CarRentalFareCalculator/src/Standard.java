@@ -2,6 +2,8 @@ public class Standard extends Vehicle {
 
     int emissionDate;
     int seatsNumber;
+
+    //Default Standard Type Values. Set by setter method not this variables.
     int vehicleCode = 12;
     int luxuryTax = 0;
     int basePrice = 3000;
@@ -27,7 +29,9 @@ public class Standard extends Vehicle {
 
     public Standard(int range, String color){
         super(range, color);
-        this.basePrice=3000;
+        this.setBasePrice(3000);
+        this.setVehicleCode(12);
+        this.setLuxuryTax(0);
     };
 
     @Override
@@ -66,7 +70,5 @@ public class Standard extends Vehicle {
         this.seatsNumber = seatsNumber;
     }
 
-    public int getVehicleCode(){
-        return vehicleCode;
-    }
+
 }

@@ -31,6 +31,9 @@ public class Electric extends Vehicle {
     public Electric(int range, String color, boolean isTesla){
         super(range, color);
         this.isTesla = isTesla;
+        this.setBasePrice(15000);
+        this.setVehicleCode(76);
+        this.setLuxuryTax(153);
     };
 
 

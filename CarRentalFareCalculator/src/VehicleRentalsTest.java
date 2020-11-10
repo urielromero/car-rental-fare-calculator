@@ -9,16 +9,13 @@ public class VehicleRentalsTest {
 
         System.out.println("\nWELCOME TO CASPERS CAR RENTAL!");
 
-//        Standard versa = new Standard(800, "PINK");
-//        //versa.displayInfo();
-//        System.out.println(versa.getCost());
-
         while (true){
 
             System.out.println("\n Select Vehicle Type to Rent! " +
                     "\n1. Standard" +
                     "\n2. Electric" +
-                    "\n3. Diesel");
+                    "\n3. Diesel" +
+                    "\n4. EXIT");
 
 
             //Take input from user
@@ -51,9 +48,13 @@ public class VehicleRentalsTest {
 
                         switch (colorSelectedInt){
                             case 1: colorSelected ="Blue";
+                                break;
                             case 2: colorSelected = "Red";
+                                break;
                             case 3: colorSelected = "Silver";
+                                break;
                             case 4: colorSelected = "White";
+                                break;
                             default:
                                 System.out.println("Default color selected");
                         }
@@ -88,13 +89,13 @@ public class VehicleRentalsTest {
 
                         switch (colorSelectedInt){
                             case 1: colorSelected = "Blue";
-                            break;
+                                break;
                             case 2: colorSelected = "Red";
-                            break;
+                                break;
                             case 3: colorSelected = "Silver";
-                            break;
+                                break;
                             case 4: colorSelected = "White";
-                            break;
+                                break;
                             default:
                                 System.out.println("Default color selected");
                                 colorSelected = "Black";
@@ -182,15 +183,14 @@ public class VehicleRentalsTest {
                     Diesel truck = new Diesel(rangeSelected, colorSelected, false);
                     truck.displayInfo();
                 }
-                break;
+                    break;
+
+                case "4":
+                    System.out.println("Thank you...Now Exiting");
+                    System.exit(0);
+                    break;
 
             }
-
-
-
-
         }
-
-
     }
 }

@@ -39,6 +39,15 @@ public class Diesel extends Vehicle {
         this.wheelsNumber = wheelsNumber;
         this.cylinderNumber = cylinderNumber;
         this.semiTruck = semiTruck;
+
+        if(semiTruck){
+            this.setBasePrice(20000);
+            this.setVehicleCode(54);
+            this.setLuxuryTax(50);
+        }
+        this.setBasePrice(8000);
+        this.setVehicleCode(66);
+        this.setLuxuryTax(3000);
     }
 
 
