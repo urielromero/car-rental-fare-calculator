@@ -3,8 +3,7 @@ public class Electric extends Vehicle {
     int batteriesOnBoard;
     boolean isTesla;
     boolean limitableRule;
-//    int vehicleCode = 76;
-//    int luxuryTax = 153;
+
     String mfgName;
 
     //signifies eligibility for tax benefits

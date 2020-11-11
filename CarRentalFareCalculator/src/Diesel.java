@@ -54,8 +54,6 @@ public class Diesel extends Vehicle {
         totalCost = totalCost + this.getCost();
     }
 
-
-
     @Override
     public void displayInfo(){
 
@@ -99,7 +97,6 @@ public class Diesel extends Vehicle {
     public String getMfgName() {
         return mfgName;
     }
-
 
     public int getWheelsNumber() {
         return wheelsNumber;

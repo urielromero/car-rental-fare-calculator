@@ -14,8 +14,8 @@ public class Vehicle {
 
 
 
-    private long cost;
-    static long totalCost;
+     private long cost;
+     static long totalCost;
 
 
 
