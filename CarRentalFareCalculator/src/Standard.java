@@ -2,6 +2,7 @@ public class Standard extends Vehicle {
 
     int emissionDate;
     int seatsNumber;
+    String mfgName = "Ford";
 
     //Default Standard Type Values. Set by setter method not this variables.
     int vehicleCode = 12;
@@ -32,6 +33,9 @@ public class Standard extends Vehicle {
         this.setBasePrice(3000);
         this.setVehicleCode(12);
         this.setLuxuryTax(0);
+
+        //keep track of total cost
+        totalCost = totalCost + this.getCost();
     };
 
     @Override
@@ -46,11 +50,14 @@ public class Standard extends Vehicle {
 
     @Override
     public void setRange(int range){
-
         while(range < 0){
             System.out.println("Please enter a range > 0");
         }
         super.setRange(range);
+    }
+
+    public String getMfgName(){
+        return mfgName;
     }
     
 

@@ -6,6 +6,7 @@ public class Diesel extends Vehicle {
     boolean semiTruck;
     int vehicleCode = 50;
     int luxuryTax;
+    String mfgName;
 
     //Default constructor
     public Diesel (){};
@@ -16,7 +17,7 @@ public class Diesel extends Vehicle {
         this.wheelsNumber = wheelsNumber;
         this.cylinderNumber = cylinderNumber;
         this.semiTruck = semiTruck;
-        limitableRule = semiTruck; // apply limitabble rule if we have a semi-truck
+        limitableRule = semiTruck; // apply limitable rule if we have a semi-truck
         if (semiTruck){
             vehicleCode = 500;
         }
@@ -36,31 +37,28 @@ public class Diesel extends Vehicle {
 
     public Diesel (int range, String color, boolean semiTruck) {
         super(range, color);
-        this.wheelsNumber = wheelsNumber;
-        this.cylinderNumber = cylinderNumber;
         this.semiTruck = semiTruck;
 
         if(semiTruck){
             this.setBasePrice(20000);
             this.setVehicleCode(54);
             this.setLuxuryTax(50);
+            this.mfgName = "Kenworth";
+        }else{
+            this.setBasePrice(8000);
+            this.setVehicleCode(66);
+            this.setLuxuryTax(3000);
+            this.mfgName="Ram";
         }
-        this.setBasePrice(8000);
-        this.setVehicleCode(66);
-        this.setLuxuryTax(3000);
+        //keep track of total cost
+        totalCost = totalCost + this.getCost();
     }
 
 
 
     @Override
     public void displayInfo(){
-       // System.out.println("\nManufacture Name: " + mfgName);
-//        System.out.println("Range: " + range);
-//        System.out.println("VIN: " + vin);
-//        System.out.println("Base Price: $" + basePrice);
-//        System.out.println("Color: " + color);
-//        System.out.println("Number of Wheels: " + wheelsNumber);
-//        System.out.println("Number of Cylinders: " + cylinderNumber);
+
         if (semiTruck){
             System.out.println("\nDiesel Semi-truck by " +
                     this.getMfgName() + " with VIN " + this.getVin() +
@@ -95,6 +93,11 @@ public class Diesel extends Vehicle {
             }
             super.setRange(range);
         }
+    }
+
+    @Override
+    public String getMfgName() {
+        return mfgName;
     }
 
 

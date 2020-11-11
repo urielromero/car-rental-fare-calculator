@@ -15,6 +15,7 @@ public class Vehicle {
 
 
     private long cost;
+    static long totalCost;
 
 
 
@@ -44,6 +45,9 @@ public class Vehicle {
 
         //1 is placeholder only for int vehicle type code #.
         this.setVehicleCode(1);
+
+        //total Cost
+        totalCost = totalCost + this.getCost();
     }
 
      public void displayInfo(){
@@ -53,8 +57,11 @@ public class Vehicle {
          //𝑐𝑜𝑠𝑡 = [(𝑏𝑎𝑠𝑒𝑃𝑟𝑖𝑐𝑒 ∗ (𝑣𝑖𝑛/𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝐶𝑜𝑑𝑒)) ÷ 𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝑅𝑎𝑛𝑔𝑒] + 𝑙𝑢𝑥𝑢𝑟𝑦𝑇𝑎𝑥
         cost = ((this.getBasePrice() * (this.getVin()/this.getVehicleCode())) / this.getRange()) + this.getLuxuryTax();
         //cost = 3000*(this.getVin()/this.getVehicleCode());
-
     return cost;
+    }
+
+    public static long getTotalCost(){
+         return totalCost;
     }
 
     public int getRange() {
@@ -70,7 +77,7 @@ public class Vehicle {
     //generate random 10 digit VIN
     private void setVin(){
          //number of digits
-         int n = 10;
+         int n = 4;
          //multiplier
          int m = (int) Math.pow(10, n-1);
          this.vin = m + new Random().nextInt(9*m);
@@ -96,6 +103,8 @@ public class Vehicle {
     public String getMfgName() {
         return mfgName;
     }
+
+    //no setter for mfgName as it it unchangeable
 
     public int getVehicleCode() {
         return VehicleCode;

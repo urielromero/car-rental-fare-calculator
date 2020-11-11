@@ -3,8 +3,8 @@ public class Electric extends Vehicle {
     int batteriesOnBoard;
     boolean isTesla;
     boolean limitableRule;
-    int vehicleCode = 76;
-    int luxuryTax = 153;
+//    int vehicleCode = 76;
+//    int luxuryTax = 153;
     String mfgName;
 
     //signifies eligibility for tax benefits
@@ -34,6 +34,15 @@ public class Electric extends Vehicle {
         this.setBasePrice(15000);
         this.setVehicleCode(76);
         this.setLuxuryTax(153);
+
+        if(isTesla){
+            this.mfgName = "Tesla";
+        }else{
+            this.mfgName = "Nikola";
+        }
+
+        //keep track of total cost
+        totalCost = totalCost + this.getCost();
     };
 
 
@@ -58,10 +67,7 @@ public class Electric extends Vehicle {
 
     @Override
     public String getMfgName() {
-        if(isTesla){
-            return "Tesla";
-        }
-        return mfgName;
+            return mfgName;
     }
 
 

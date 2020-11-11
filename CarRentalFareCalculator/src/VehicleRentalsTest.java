@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class VehicleRentalsTest {
@@ -9,6 +10,14 @@ public class VehicleRentalsTest {
 
         System.out.println("\nWELCOME TO CASPERS CAR RENTAL!");
 
+//        Standard s = new Standard(200, "red");
+//        Standard t = new Standard(100,"blue");
+//
+//        System.out.println("Cost $" + s.getCost());
+//        System.out.println("Cost $" + t.getCost());
+
+        System.out.println("Total: $" + Vehicle.getTotalCost());
+
         while (true){
 
             System.out.println("\n Select Vehicle Type to Rent! " +
@@ -16,7 +25,6 @@ public class VehicleRentalsTest {
                     "\n2. Electric" +
                     "\n3. Diesel" +
                     "\n4. EXIT");
-
 
             //Take input from user
             Scanner scan = new Scanner(System.in);
@@ -63,6 +71,7 @@ public class VehicleRentalsTest {
                     }
                     Standard standard = new Standard(rangeSelected,colorSelected);
                     standard.displayInfo();
+                    System.out.println("Total: $" + Vehicle.getTotalCost());
                     break;
 
 
@@ -115,6 +124,7 @@ public class VehicleRentalsTest {
 
                     Electric electric = new Electric(rangeSelected,colorSelected, isTesla);
                     electric.displayInfo();
+                    System.out.println("Total: $" + Vehicle.getTotalCost());
                     break;
 
                 case "3":
@@ -179,9 +189,11 @@ public class VehicleRentalsTest {
                 if(isSemi){
                     Diesel semiTruck = new Diesel(rangeSelected, colorSelected, true);
                     semiTruck.displayInfo();
+                    System.out.println("Total: $" + Vehicle.getTotalCost());
                 }else{
                     Diesel truck = new Diesel(rangeSelected, colorSelected, false);
                     truck.displayInfo();
+                    System.out.println("Total: $" + Vehicle.getTotalCost());
                 }
                     break;
 
