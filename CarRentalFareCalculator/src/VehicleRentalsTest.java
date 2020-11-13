@@ -11,11 +11,13 @@ public class VehicleRentalsTest {
         //loop runs until exited by user
         while (true){
 
+//Day.valueOf(str);
             //Vehicle type selection message
             System.out.println("\n Select Vehicle Type to Rent! " +
                     "\n1. Standard" +
                     "\n2. Electric" +
                     "\n3. Diesel" +
+                    "\n5. Boats" +
                     "\n4. EXIT");
 
             //Scan input from user
@@ -212,6 +214,23 @@ public class VehicleRentalsTest {
                     System.out.println("Thank you...Now Exiting");
                     System.exit(0);
                     break;
+
+                case "5":
+                    //Boats Enums
+
+                    System.out.println("Select Boat Type" +
+                            "\n1. Barge" +
+                            "\n2. Cargo" +
+                            "\n3. Speed" +
+                            "\n4. Yacht");
+                    String b = scan.next();
+                        switch (b){
+                            case "1":
+                                System.out.println("Barge Selected");
+                             break;
+                        }
+
+
             }
         }
     }
