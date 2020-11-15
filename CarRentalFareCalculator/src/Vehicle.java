@@ -14,8 +14,8 @@ public class Vehicle {
 
 
 
-     private long cost;
-     static long totalCost;
+     private float cost;
+     static float totalCost;
 
 
 
@@ -53,14 +53,14 @@ public class Vehicle {
      public void displayInfo(){
      }
 
-    public long getCost( ){
+    public float getCost( ){
          //𝑐𝑜𝑠𝑡 = [(𝑏𝑎𝑠𝑒𝑃𝑟𝑖𝑐𝑒 ∗ (𝑣𝑖𝑛/𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝐶𝑜𝑑𝑒)) ÷ 𝑣𝑒ℎ𝑖𝑐𝑙𝑒𝑅𝑎𝑛𝑔𝑒] + 𝑙𝑢𝑥𝑢𝑟𝑦𝑇𝑎𝑥
         cost = ((this.getBasePrice() * (this.getVin()/this.getVehicleCode())) / this.getRange()) + this.getLuxuryTax();
         //cost = 3000*(this.getVin()/this.getVehicleCode());
     return cost;
     }
 
-    public static long getTotalCost(){
+    public static float getTotalCost(){
          return totalCost;
     }
 
@@ -74,7 +74,7 @@ public class Vehicle {
 
     public long getVin() { return vin; }
 
-    //generate random 10 digit VIN
+    //generate random 4 digit VIN
     private void setVin(){
          //number of digits
          int n = 4;

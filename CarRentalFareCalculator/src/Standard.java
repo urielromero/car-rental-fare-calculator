@@ -48,13 +48,13 @@ public class Standard extends Vehicle {
                 " and only costs $" + this.getCost());
     }
 
-    @Override
-    public void setRange(int range){
-        while(range < 0){
-            System.out.println("Please enter a range > 0");
-        }
-        super.setRange(range);
-    }
+//    @Override
+//    public void setRange(int range){
+//        while(range < 0){
+//            System.out.println("Please enter a range > 0");
+//        }
+//        super.setRange(range);
+//    }
 
     public String getMfgName(){
         return mfgName;
